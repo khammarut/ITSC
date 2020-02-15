@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Employees Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-resource.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js" charset="utf-8"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="sweetalert.css" />
+    <script src="app.js" charset="utf-8"></script>
+  </head>
+  <body ng-app="myApp" ng-controller="empController" ng-init="displayData()">
+    <div class="container">
+      <div class="card">
+        <div class="card-body"><br>
+          <button type="button" class="btn btn-success btn-xs" ng-click="open()">Insert Data</button><br><br>
+          <table class="table table-bordered">
+            <tr>
+              <th>Firstname</th>
+              <th>Lastname</th>
+              <th>Birthday</th>
+              <th>Email</th>
+              <th>Operation</th>
+            </tr>
+            <tr ng-repeat="x in data">
+              <td>{{x.firstname}}</td>
+              <td>{{x.lastname}}</td>
+              <td>{{x.birthday}}</td>
+              <td>{{x.email}}</td>
+              <td align="Center"> <button type="button" class="btn btn-info btn-xs" ng-click="openUp(x.firstname,x.lastname,x.birthday,x.email,x._id)">update</button> <button type="button" class="btn btn-danger btn-xs" ng-click="deleteData(x._id)">delete</button> </td>
+            </tr>
+          </table>
+        </div>
+        </div>
+      </div>
+
+  <script src="sweetalert.min.js"></script>
+  </body>
+</html>
